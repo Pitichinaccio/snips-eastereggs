@@ -6,13 +6,16 @@ from hermes_python.hermes import Hermes
 from hermes_python.ontology import *
 # import sys
 # sys.path.append('/usr/local/lib/python2.7/dist-packages')
-from gpiozero import LED
+# from gpiozero import LED
+import RPi.GPIO as GPIO
 import io
 
 CONFIGURATION_ENCODING_FORMAT = "utf-8"
-CONFIG_INI = "config.ini"
+# CONFIG_INI = "config.ini"
 
-led = LED(17)
+# led = LED(17)
+GPIO.setmode(GPIO.BCM)
+GPIO.setup(17, GPIO.OUT)
 
 # class SnipsConfigParser(ConfigParser.SafeConfigParser):
 #   def to_dict(self):
@@ -33,12 +36,14 @@ def subscribe_intent_callback(hermes, intentMessage):
     intentname = intentMessage.intent.intent_name
     if intentname == "bertron:GPIOhigh":
         result_sentence = "Die LED ist eingeschaltet"
-        led.on()
+        # led.on()
+        GPIO.output(17, GPIO.HIGH)
         hermes.publish_end_session(intentMessage.session_id, result_sentence)
 
     elif intentname == "bertron:GPIOlow":
         result_sentence = "Die LED ist ausgeschaltet"
-        led.off()
+        # led.off()
+        GPIO.output(17, GPIO.LOW)
         hermes.publish_end_session(intentMessage.session_id, result_sentence)
 
 
