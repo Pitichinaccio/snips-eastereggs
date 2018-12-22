@@ -4,13 +4,13 @@
 import ConfigParser
 from hermes_python.hermes import Hermes
 from hermes_python.ontology import *
-from gpiozero import LED
+import gpiozero
 import io
 
 CONFIGURATION_ENCODING_FORMAT = "utf-8"
 CONFIG_INI = "config.ini"
 
-led = LED(17)
+led = gpiozero.LED(17)
 
 # class SnipsConfigParser(ConfigParser.SafeConfigParser):
 #   def to_dict(self):
