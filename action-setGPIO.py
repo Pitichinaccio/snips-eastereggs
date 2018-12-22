@@ -14,6 +14,7 @@ CONFIGURATION_ENCODING_FORMAT = "utf-8"
 # CONFIG_INI = "config.ini"
 
 # led = LED(17)
+GPIO.setwarnings(False)
 GPIO.setmode(GPIO.BCM)
 GPIO.setup(17, GPIO.OUT)
 
@@ -37,13 +38,13 @@ def subscribe_intent_callback(hermes, intentMessage):
     if intentname == "bertron:GPIOhigh":
         result_sentence = "Die LED ist eingeschaltet"
         # led.on()
-        GPIO.output(17, GPIO.HIGH)
+        GPIO.output(17,True)
         hermes.publish_end_session(intentMessage.session_id, result_sentence)
 
     elif intentname == "bertron:GPIOlow":
         result_sentence = "Die LED ist ausgeschaltet"
         # led.off()
-        GPIO.output(17, GPIO.LOW)
+        GPIO.output(17,False)
         hermes.publish_end_session(intentMessage.session_id, result_sentence)
 
 
