@@ -5,7 +5,7 @@ import ConfigParser
 from hermes_python.hermes import Hermes
 from hermes_python.ontology import *
 import sys
-sys.path.append['/usr/local/lib/python2.7/dist-packages']
+sys.path.append('/usr/local/lib/python2.7/dist-packages')
 import gpiozero
 import io
 
