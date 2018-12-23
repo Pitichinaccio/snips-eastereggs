@@ -16,7 +16,7 @@ def subscribe_intent_callback(hermes, intentMessage):
         hermes.publish_end_session(intentMessage.session_id, result_sentence)
 
     elif intentname == "bertron:Crystal":
-        result_sentence = "Herzlichen Glückwunsch ich bin doch nicht schwanger. Sie haben das settab abgeschlossen"
+        result_sentence = "Herzlichen Glyckwunsch ich bin doch nicht schwanger Sie haben das settab abgeschlossen"
         hermes.publish_end_session(intentMessage.session_id, result_sentence)
 
 if __name__ == "__main__":
