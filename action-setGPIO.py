@@ -20,6 +20,7 @@ GPIO.setup(17, GPIO.OUT)
 # you have to add _snips and _snips-skills to the group gpio
 # sudo adduser _snips gpio
 # sudo adduser _snips-skills gpio
+# otherwise it does not work for me
 
 # class SnipsConfigParser(ConfigParser.SafeConfigParser):
 #   def to_dict(self):
