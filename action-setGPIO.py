@@ -17,6 +17,9 @@ CONFIGURATION_ENCODING_FORMAT = "utf-8"
 GPIO.setwarnings(False)
 GPIO.setmode(GPIO.BCM)
 GPIO.setup(17, GPIO.OUT)
+# you have to add _snips and _snips-skills to the group gpio
+# sudo adduser _snips gpio
+# sudo adduser _snips-skills gpio
 
 # class SnipsConfigParser(ConfigParser.SafeConfigParser):
 #   def to_dict(self):
