@@ -12,15 +12,15 @@ CONFIGURATION_ENCODING_FORMAT = "utf-8"
 def subscribe_intent_callback(hermes, intentMessage):
     intentname = intentMessage.intent.intent_name
     if intentname == "bertron:Fuchs":
-        result_sentence = "Whoa  papapapapapapapo"
+        result_sentence = "Whoa  papapapapapapapau"
         hermes.publish_end_session(intentMessage.session_id, result_sentence)
 
     elif intentname == "bertron:Crystal":
-        result_sentence = "Herzlichen Glyckwunsch ich bin doch nicht schwanger Sie haben das settapp abgeschlossen"
+        result_sentence = "Herzlichen Glückwunsch, ich bin doch nicht schwanger. Sie haben das sett app abgeschlossen"
         hermes.publish_end_session(intentMessage.session_id, result_sentence)
         
     elif intentname == "bertron:Schoenste":
-        result_sentence = "Frau Kynigin Ihr seid die Schynste hier aber Schneewittchen hinter den sieben Bergen bei den sieben Zwergen ist noch tausend Mal schyner als Ihr"
+        result_sentence = "Frau Königin Ihr seid die Schönste hier aber Schneewittchen hinter den sieben Bergen bei den sieben Zwergen ist noch tausend Mal schöner als Ihr"
         hermes.publish_end_session(intentMessage.session_id, result_sentence)       
         
 if __name__ == "__main__":
